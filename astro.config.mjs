@@ -8,7 +8,7 @@ export default defineConfig({
 		starlight({
 			title: 'JM Docs',
             description:'常用文档集成',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			social: [{ icon: 'seti:vite', label: 'Vite', href: 'https://cn.vitejs.dev/' }],
 			sidebar: [
 				{
 					label: 'Guides',
