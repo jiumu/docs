@@ -8,19 +8,31 @@ export default defineConfig({
 		starlight({
 			title: 'JM Docs',
             description:'常用文档集成',
-			social: [{ icon: 'seti:vite', label: 'Vite', href: 'https://cn.vitejs.dev/' }],
+            locales: {
+                root:{
+                    label:'中文',
+                    lang:'zh-CN'
+                }
+            },
+            lastUpdated:true,
+            customCss:[
+                './src/styles/index.css'
+            ],
+			social: [{ icon: 'github', label: 'Vite', href: 'https://github.com/jiumu/docs' }],
 			sidebar: [
-				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
-				},
-				{
-					label: 'Reference',
-					autogenerate: { directory: 'reference' },
-				},
+
+                {
+                    label:'Linux常用命令',
+                    items:[
+                        {label:'文件目录',autogenerate:{directory:'linux-command/files'},collapsed:true},
+                        {label:'查看编辑',autogenerate:{directory:'linux-command/edit'},collapsed:true},
+                        {label:'系统信息',autogenerate:{directory:'linux-command/system'},collapsed:true},
+                        {label:'权限',autogenerate:{directory:'linux-command/permission'},collapsed:true},
+                        {label:'网络',autogenerate:{directory:'linux-command/network'},collapsed:true},
+                        {label:'软件包',autogenerate:{directory:'linux-command/package'},collapsed:true}
+
+                    ]
+                }
 			],
 		}),
 	],
